@@ -4,15 +4,19 @@ import {
   labelStyle,
   searchIcon,
   inputStyle,
+  searchContainerHeader,
 } from "./styles.module.scss";
 
-import SearchIcon from "../../static/assets/search-icon.svg";
+// component
+import ChooseSearch from "../ChooseSearch";
 
 const index = () => {
   return (
     <div className={searchContainer}>
-      <h1>Pesquise</h1>
-      <br />
+      <div className={searchContainerHeader}>
+        <h2>Pesquise</h2>
+        <ChooseSearch />
+      </div>
       <br />
       <label className={labelStyle}>
         <input type="text" id="search-bar" className={inputStyle} />

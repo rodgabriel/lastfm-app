@@ -1,0 +1,33 @@
+.inputContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.inputCheck {
+  opacity: 0;
+}
+
+.inputLabel {
+  width: 12rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.75rem 2rem;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  transition: 0.2s ease;
+  border-radius: 0.4rem;
+  border: 1px solid #08080866;
+
+  background: #293848;
+
+  p {
+    margin-right: 2rem;
+  }
+
+  &.active {
+    background: #334b65;
+    border: 1px solid #5b96d5;
+  }
+}

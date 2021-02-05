@@ -32,7 +32,7 @@ const HomePage = () => {
       setTopArtists(data);
     }
 
-    getTopArtists();
+    //getTopArtists();
   }, []);
 
   console.log(topArtists);
