@@ -1,8 +1,18 @@
-import { useEffect } from "react";
-import axios from "axios";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+// pages
+import HomePage from "./pages/HomePage";
 
 function App() {
-  return <div>APP</div>;
+  return (
+    <Router>
+      <Switch>
+        <Route path="/" exact>
+          <HomePage />
+        </Route>
+      </Switch>
+    </Router>
+  );
 }
 
 export default App;

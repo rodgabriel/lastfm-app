@@ -1,0 +1,81 @@
+.wrapper {
+  color: #ffffff;
+  height: 100%;
+
+  padding: 0 80px;
+}
+
+.navbar {
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & strong {
+    font-size: 2.4rem;
+  }
+}
+
+.userSection {
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .userImg {
+    margin-right: 2rem;
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.cardContainer {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card {
+  width: 250px;
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.cardAvatar {
+  width: 90px;
+  height: 90px;
+  background: #fff;
+  border-radius: 50%;
+  margin-bottom: 2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  font-size: 48px;
+  font-weight: bold;
+
+  color: #3b2e55;
+  box-shadow: 3px 6px 18px -6px rgba(0, 0, 0, 0.2);
+}
+
+.cardContent {
+  text-align: center;
+}
+
+.searchSection {
+  height: 400px;
+  width: 100%;
+}
