@@ -6,6 +6,7 @@ import HomePage from "./pages/HomePage";
 function App() {
   return (
     <Router>
+      <div className="overlay"></div>
       <Switch>
         <Route path="/" exact>
           <HomePage />
