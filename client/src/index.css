@@ -11,14 +11,16 @@ html {
 }
 
 body {
+  background: linear-gradient(to bottom, #3b2e55, #131330) no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 100vh;
-  width: 100%;
+  height: 100%;
 }
 
 #root {
