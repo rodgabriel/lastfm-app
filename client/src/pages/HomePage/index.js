@@ -11,12 +11,12 @@ import {
   main,
   cardSection,
   cardContainer,
-  card,
-  cardHeader,
-  cardContent,
-  cardAvatar,
   searchSection,
 } from "./styles.module.scss";
+
+// components
+import Card from "../../components/Card";
+import SearchInput from "../../components/SearchInput";
 
 const HomePage = () => {
   const [topArtists, setTopArtists] = useState([]);
@@ -47,26 +47,15 @@ const HomePage = () => {
         </div>
       </nav>
       <main className={main}>
-        <section className={searchSection}>Search section</section>
+        <section className={searchSection}>
+          <SearchInput />
+        </section>
         <section className={cardSection}>
           <h1>Top 10 Artistas no Brasil</h1>
           <div className={cardContainer}>
             {topArtists &&
-              topArtists.map((artist) => {
-                return (
-                  <div className={card}>
-                    <div className={cardHeader}>
-                      <div className={cardAvatar}>
-                        <p>{artist.name.slice(0, 1)}</p>
-                      </div>
-                    </div>
-                    <div className={cardContent}>
-                      <h2>{artist.name}</h2>
-                      <p>{artist.listeners} ouvintes mensais</p>
-                      <p>Saiba mais!</p>
-                    </div>
-                  </div>
-                );
+              topArtists.map((artist, index) => {
+                return <Card artist={artist} position={index} />;
               })}
           </div>
         </section>
