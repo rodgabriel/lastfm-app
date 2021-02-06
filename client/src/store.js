@@ -8,6 +8,7 @@ import historicoPesquisaReducer from "./reducers/historicoPesquisaReducer";
 import artistDataReducer from "./reducers/artistDataReducer";
 import albumDataReducer from "./reducers/albumDataReducer";
 import topArtistsReducer from "./reducers/topArtistsReducer";
+import { userLoginReducer } from "./reducers/userReducers";
 
 const rootReducer = combineReducers({
   buscarPor: buscarPorArtistaOuAlbum,
@@ -15,7 +16,12 @@ const rootReducer = combineReducers({
   artistData: artistDataReducer,
   albumData: albumDataReducer,
   topArtists: topArtistsReducer,
+  userLogin: userLoginReducer,
 });
+
+const userDataLocalStorage = localStorage.getItem("userData")
+  ? JSON.parse(localStorage.getItem("userData"))
+  : null;
 
 const historicoPesquisaLocalStorage = localStorage.getItem("historicoPesquisa")
   ? JSON.parse(localStorage.getItem("historicoPesquisa"))
@@ -27,6 +33,9 @@ const initialState = {
   artistData: {},
   albumData: {},
   topArtists: [],
+  userLogin: {
+    userData: userDataLocalStorage,
+  },
 };
 
 const middleware = [thunk];
