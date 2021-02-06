@@ -65,7 +65,7 @@ const Index = ({ match }) => {
             <div className={otherSection}>
               <h3>Artistas relacionados</h3>
               {artist.similar.artist.map((artist) => (
-                <Tag text={artist.name} link={artist.url} />
+                <Tag text={artist.name} link={`/artist=${artist.name}`} />
               ))}
             </div>
           </div>

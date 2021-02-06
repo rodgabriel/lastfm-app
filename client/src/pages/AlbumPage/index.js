@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 // actions
 import buscarAlbumData from "../../actions/buscarAlbumData";
@@ -9,6 +10,7 @@ import {
   container,
   albumHeader,
   albumHeaderName,
+  albumHeaderArtist,
   albumTags,
   albumContent,
   albumTracks,
@@ -23,9 +25,7 @@ import Tag from "../../components/Tag";
 
 const Index = ({ match }) => {
   const dispatch = useDispatch();
-  const { album, loading, error, message } = useSelector(
-    (state) => state.albumData
-  );
+  const { album, loading, error } = useSelector((state) => state.albumData);
 
   useEffect(() => {
     dispatch(buscarAlbumData(match.params.artist, match.params.album));
@@ -37,14 +37,21 @@ const Index = ({ match }) => {
 
   return (
     <div className={container}>
-      {album ? (
+      {album && !error ? (
         <>
           <div className={albumHeader}>
             <div className={albumHeaderName}>
               <h1>{album.name}</h1>
+
               <a target="_blank" rel="noreferrer" href={album.url}>
                 <i className="fas fa-play-circle"></i>
               </a>
+            </div>
+            <div className={albumHeaderArtist}>
+              <i className="fas fa-microphone"></i>
+              <Link to={`/artist=${album.artist}`}>
+                <h2>{album.artist}</h2>
+              </Link>
             </div>
             <div className={albumTags}>
               <Tag
@@ -91,14 +98,14 @@ const Index = ({ match }) => {
             </div>
             <div className={albumInfo}>
               <h3>Sobre o álbum</h3>
-              <p>{album.wiki.summary.split("<")[0]}</p>
+              <p>{album.wiki && album.wiki.summary.split("<")[0]}</p>
             </div>
           </div>
         </>
       ) : loading ? (
         <p>Loading...</p>
       ) : (
-        error && <h1>{message}</h1>
+        error && <h1>{error}</h1>
       )}
     </div>
   );

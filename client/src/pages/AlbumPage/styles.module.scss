@@ -47,6 +47,28 @@
   }
 }
 
+.albumHeaderArtist {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  i {
+    font-size: 2.4rem;
+    margin-right: 1rem;
+    color: #e4d2ee;
+  }
+
+  h2 {
+    font-size: 3rem;
+    font-weight: normal;
+    transition: 0.2s;
+
+    &:hover {
+      color: #e4d2ee;
+    }
+  }
+}
+
 .albumContent {
   width: 100%;
   display: flex;
