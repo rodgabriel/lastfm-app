@@ -47,11 +47,12 @@
   flex: 1;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
 .searchSection {
   width: 100%;
   flex: 1;
+  margin: 12rem 0;
 }

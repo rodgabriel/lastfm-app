@@ -17,7 +17,7 @@ import {
 
 // components
 import Card from "../../components/Card";
-import SearchInput from "../../components/SearchInput";
+import FormSearch from "../../components/FormSearch";
 
 const HomePage = () => {
   const buscarPor = useSelector((state) => state.buscarPor);
@@ -34,7 +34,7 @@ const HomePage = () => {
       setTopArtists(data);
     }
 
-    //getTopArtists();
+    getTopArtists();
   }, []);
 
   console.log(topArtists);
@@ -50,14 +50,7 @@ const HomePage = () => {
       </nav>
       <main className={main}>
         <section className={searchSection}>
-          <SearchInput
-            header
-            placeholder="Digite o nome do artista"
-            search={buscarPor === "artist"}
-          />
-          {buscarPor === "album" && (
-            <SearchInput placeholder="Digite o nome do álbum" search />
-          )}
+          <FormSearch />
         </section>
         <section className={cardSection}>
           <h1>Top 10 Artistas no Brasil</h1>

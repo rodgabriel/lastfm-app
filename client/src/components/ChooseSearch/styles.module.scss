@@ -20,10 +20,14 @@
   border-radius: 0.4rem;
   border: 1px solid #08080866;
 
-  background: #293848;
+  background: #3b2e55;
+
+  &:hover {
+    filter: brightness(1.2);
+  }
 
   &.active {
-    background: #334b65;
-    border: 1px solid #5b96d5;
+    background: #5b2e65;
+    border: 1px solid #b36d74;
   }
 }

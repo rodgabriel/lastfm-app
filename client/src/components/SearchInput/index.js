@@ -1,57 +1,76 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 // styles
-import {
-  searchContainer,
-  labelStyle,
-  searchIcon,
-  inputStyle,
-  searchContainerHeader,
-} from "./styles.module.scss";
+import { labelStyle, searchIcon, inputStyle } from "./styles.module.scss";
 
 // component
 import ChooseSearch from "../ChooseSearch";
 
 // actions
-import { getArtistData } from "../../actions/getArtistData";
-import { getAlbumData } from "../../actions/getAlbumData";
+import { getData } from "../../actions/getData";
 
-const Index = ({ header, placeholder, search }) => {
+const Index = ({ placeholder, search }) => {
   const dispatch = useDispatch();
+  const buscarPor = useSelector((state) => state.buscarPor);
 
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState({ artist: "", album: "" });
 
   const onSearchTerm = (e) => {
     if (e.keyCode === 13) {
-      dispatch(getArtistData(searchTerm));
+      buscarPor === "artist" &&
+        setSearchTerm((state) => ({ ...state, album: "" }));
+      dispatch(getData(searchTerm, buscarPor));
     }
   };
+
+  const albumInput = useRef(null);
+
+  const onNextInput = (e) => {
+    if (e.keyCode === 13) {
+      albumInput.current.focus();
+    }
+  };
+
   return (
-    <div className={searchContainer}>
-      {header && (
-        <div className={searchContainerHeader}>
-          <h2>Pesquise:</h2>
-          <ChooseSearch />
-        </div>
-      )}
-      <br />
+    <>
       <label className={labelStyle}>
         <input
           type="text"
-          placeholder={placeholder}
-          id="search-bar"
+          placeholder="Nome do artista"
           className={inputStyle}
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          onKeyDown={(e) => search && onSearchTerm(e)}
+          value={searchTerm.artist}
+          onChange={(e) =>
+            setSearchTerm((state) => ({ ...state, artist: e.target.value }))
+          }
+          onKeyDown={(e) =>
+            buscarPor === "artist" ? onSearchTerm(e) : onNextInput(e)
+          }
         />
-        {search && (
+        {buscarPor !== "album" && (
           <button className={searchIcon}>
             <i className="fas fa-search"></i>
           </button>
         )}
       </label>
-    </div>
+      {buscarPor === "album" && (
+        <label className={labelStyle}>
+          <input
+            ref={albumInput}
+            type="text"
+            placeholder="Nome do álbum"
+            className={inputStyle}
+            value={searchTerm.album}
+            onChange={(e) =>
+              setSearchTerm((state) => ({ ...state, album: e.target.value }))
+            }
+            onKeyDown={(e) => onSearchTerm(e)}
+          />
+          <button className={searchIcon}>
+            <i className="fas fa-search"></i>
+          </button>
+        </label>
+      )}
+    </>
   );
 };
 
