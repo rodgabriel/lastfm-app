@@ -1,37 +1,13 @@
-.wrapper {
-  color: #ffffff;
-  height: 100%;
-
-  padding: 0 80px;
-}
-
-.navbar {
-  height: 10vh;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  & strong {
-    font-size: 2.4rem;
-  }
-}
-
-.userSection {
-  font-size: 1.6rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  .userImg {
-    margin-right: 2rem;
-  }
-}
-
 .main {
+  padding: 0 8rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+
+  @media (max-width: 768px) {
+    padding: 0 4rem;
+  }
 }
 
 .cardSection {

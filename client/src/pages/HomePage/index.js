@@ -1,14 +1,10 @@
 import { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import axios from "axios";
 
 // css classes
 import {
   wrapper,
-  navbar,
-  userSection,
-  userImg,
-  logBtn,
   main,
   cardSection,
   cardContainer,
@@ -20,7 +16,6 @@ import Card from "../../components/Card";
 import FormSearch from "../../components/FormSearch";
 
 const HomePage = () => {
-  const buscarPor = useSelector((state) => state.buscarPor);
   const [topArtists, setTopArtists] = useState([]);
 
   useEffect(() => {
@@ -39,13 +34,6 @@ const HomePage = () => {
 
   return (
     <div className={wrapper}>
-      <nav className={navbar}>
-        <strong>LAST.FM SEARCHER</strong>
-        <div className={userSection}>
-          <div className={userImg}>USER</div>
-          <div className={logBtn}>SIGN IN | OUT</div>
-        </div>
-      </nav>
       <main className={main}>
         <section className={searchSection}>
           <FormSearch />
