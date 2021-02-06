@@ -37,8 +37,6 @@ const HomePage = () => {
     getTopArtists();
   }, []);
 
-  console.log(topArtists);
-
   return (
     <div className={wrapper}>
       <nav className={navbar}>

@@ -4,11 +4,15 @@ import thunk from "redux-thunk";
 
 // reducers
 import buscarPorArtistaOuAlbum from "./reducers/buscarPorArtistaOuAlbum";
-import salvarHistoricoPesquisa from "./reducers/salvarHistoricoPesquisa";
+import historicoPesquisaReducer from "./reducers/historicoPesquisaReducer";
+import artistDataReducer from "./reducers/artistDataReducer";
+import albumDataReducer from "./reducers/albumDataReducer";
 
 const rootReducer = combineReducers({
   buscarPor: buscarPorArtistaOuAlbum,
-  historicoPesquisa: salvarHistoricoPesquisa,
+  historicoPesquisa: historicoPesquisaReducer,
+  artistData: artistDataReducer,
+  albumData: albumDataReducer,
 });
 
 const historicoPesquisaLocalStorage = localStorage.getItem("historicoPesquisa")
@@ -18,6 +22,8 @@ const historicoPesquisaLocalStorage = localStorage.getItem("historicoPesquisa")
 const initialState = {
   buscarPor: "artist",
   historicoPesquisa: historicoPesquisaLocalStorage,
+  artistData: {},
+  albumData: {},
 };
 
 const middleware = [thunk];

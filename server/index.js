@@ -31,4 +31,41 @@ app.post(
   })
 );
 
+// GET ARTIST DATA
+app.post(
+  "/artist/:name",
+  asyncHandler(async (req, res) => {
+    const { method, artist } = req.body.params;
+    const { data } = await axios.get(`${lastfmUrl}`, {
+      params: {
+        method,
+        artist,
+        api_key: process.env.LASTFM_API_KEY,
+        format: "json",
+      },
+    });
+    res.json(data);
+  })
+);
+
+// GET ALBUM DATA
+app.post(
+  "/album/:name",
+  asyncHandler(async (req, res) => {
+    const { method, artist, album } = req.body.params;
+    console.log(method);
+    const { data } = await axios.get(`${lastfmUrl}`, {
+      params: {
+        method,
+        album,
+        api_key: process.env.LASTFM_API_KEY,
+        artist,
+        format: "json",
+      },
+    });
+    console.log(data);
+    res.json(data);
+  })
+);
+
 app.listen(5000, console.log("Running on port 5000"));
