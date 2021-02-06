@@ -1,20 +1,12 @@
-.searchContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  margin-bottom: 8rem;
-  height: 300px;
-}
-
 .labelStyle {
   position: relative;
   background: #fffa;
   height: 5rem;
-  border-radius: 4rem;
-  padding: 0.5rem 2.5rem;
+  border-radius: 1rem;
+  padding: 0.5rem 1.5rem;
+  margin: 1rem 0;
   transition: 0.3s all ease-in-out;
-  width: 40%;
+  width: 41%;
 
   &:focus-within,
   &:hover {
@@ -33,9 +25,14 @@
   float: left;
   color: #131330cc;
   font-size: 2.4rem;
-  font-weight: bold;
+  font-weight: normal;
   transition: ease-in 0.4s;
   line-height: 4rem;
+  text-transform: capitalize;
+
+  &::placeholder {
+    color: #13133066;
+  }
 }
 
 .searchIcon {

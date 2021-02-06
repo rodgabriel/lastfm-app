@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 
 // css classes
@@ -16,9 +17,10 @@ import {
 
 // components
 import Card from "../../components/Card";
-import SearchInput from "../../components/SearchInput";
+import FormSearch from "../../components/FormSearch";
 
 const HomePage = () => {
+  const buscarPor = useSelector((state) => state.buscarPor);
   const [topArtists, setTopArtists] = useState([]);
 
   useEffect(() => {
@@ -48,7 +50,7 @@ const HomePage = () => {
       </nav>
       <main className={main}>
         <section className={searchSection}>
-          <SearchInput />
+          <FormSearch />
         </section>
         <section className={cardSection}>
           <h1>Top 10 Artistas no Brasil</h1>
