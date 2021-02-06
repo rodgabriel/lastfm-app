@@ -4,6 +4,12 @@ export const getData = ({ artist, album }, buscarPor) => async (
   dispatch,
   getState
 ) => {
+  dispatch({ type: "SAVE_SEARCH_HISTORY", payload: { artist, album } });
+  localStorage.setItem(
+    "historicoPesquisa",
+    JSON.stringify(getState().historicoPesquisa)
+  );
+
   if (album && buscarPor === "album") {
     try {
       dispatch({ type: "GET_ALBUM_REQUEST" });

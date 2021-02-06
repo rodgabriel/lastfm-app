@@ -3,9 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 // styles
 import { labelStyle, searchIcon, inputStyle } from "./styles.module.scss";
 
-// component
-import ChooseSearch from "../ChooseSearch";
-
 // actions
 import { getData } from "../../actions/getData";
 
