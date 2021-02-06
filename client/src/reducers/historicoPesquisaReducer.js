@@ -1,5 +1,8 @@
 import uuid from "react-uuid";
-const salvarHistoricoPesquisa = (state = { historicoPesquisa: {} }, action) => {
+const historicoPesquisaReducer = (
+  state = { historicoPesquisa: {} },
+  action
+) => {
   switch (action.type) {
     case "SAVE_SEARCH_HISTORY":
       return {
@@ -10,4 +13,4 @@ const salvarHistoricoPesquisa = (state = { historicoPesquisa: {} }, action) => {
       return state;
   }
 };
-export default salvarHistoricoPesquisa;
+export default historicoPesquisaReducer;
