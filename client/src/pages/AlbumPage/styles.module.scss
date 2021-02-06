@@ -8,8 +8,8 @@
   }
 }
 
-.artistHeader {
-  .artistHeaderName {
+.albumHeader {
+  .albumHeaderName {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -38,7 +38,7 @@
     }
   }
 
-  .artistTags {
+  .albumTags {
     margin: 0.5rem 0;
     display: flex;
     flex-wrap: wrap;
@@ -47,7 +47,7 @@
   }
 }
 
-.artistContent {
+.albumContent {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -59,7 +59,7 @@
   }
 }
 
-.bioSection {
+.albumTracks {
   flex: 2;
   margin: 8rem 0;
   width: 100%;
@@ -69,6 +69,10 @@
   border-radius: 1.2rem;
   backdrop-filter: blur(1rem);
   color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
 
   h3 {
     font-size: 3rem;
@@ -84,6 +88,7 @@
 
   @media (max-width: 768px) {
     padding: 3rem 4rem;
+    margin: 2rem 0;
   }
 
   @media (min-width: 960px) {
@@ -91,7 +96,7 @@
   }
 }
 
-.otherSection {
+.albumInfo {
   flex: 1;
   margin: 8rem 0;
   width: 100%;
@@ -114,9 +119,30 @@
 
   @media (max-width: 768px) {
     padding: 3rem 4rem;
+    margin: 2rem 0;
+  }
+}
+
+.trackInfo {
+  display: flex;
+  width: 100%;
+  margin: 0.5rem 0;
+
+  .trackNumber {
+    margin-right: 1rem;
   }
 
-  @media (max-width: 960px) {
-    margin: 4rem 0;
+  .flexJustifyBetween {
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+
+    a {
+      margin-left: 1rem;
+    }
+
+    @media (max-width: 474px) {
+      flex-direction: column;
+    }
   }
 }
