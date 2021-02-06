@@ -23,7 +23,7 @@ const Index = () => {
       <>
         <label
           className={`${inputLabel} ${buscarPor === "artist" ? active : ""}`}
-          for="Artista"
+          htmlFor="Artista"
         >
           <p>Artista</p>
         </label>
@@ -39,7 +39,7 @@ const Index = () => {
       <>
         <label
           className={`${inputLabel} ${buscarPor === "album" ? active : ""}`}
-          for="Album"
+          htmlFor="Album"
         >
           <p>Álbum</p>
         </label>

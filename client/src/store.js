@@ -8,7 +8,7 @@ import historicoPesquisaReducer from "./reducers/historicoPesquisaReducer";
 import artistDataReducer from "./reducers/artistDataReducer";
 import albumDataReducer from "./reducers/albumDataReducer";
 import topArtistsReducer from "./reducers/topArtistsReducer";
-import { userLoginReducer } from "./reducers/userReducers";
+import { userLoginReducer, userRegisterReducer } from "./reducers/userReducers";
 
 const rootReducer = combineReducers({
   buscarPor: buscarPorArtistaOuAlbum,
@@ -17,6 +17,7 @@ const rootReducer = combineReducers({
   albumData: albumDataReducer,
   topArtists: topArtistsReducer,
   userLogin: userLoginReducer,
+  userRegister: userRegisterReducer,
 });
 
 const userDataLocalStorage = localStorage.getItem("userData")

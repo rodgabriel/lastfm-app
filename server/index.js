@@ -4,6 +4,7 @@ import cors from "cors";
 import axios from "axios";
 import dotenv from "dotenv";
 import connectDB from "./config/db.js";
+import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 
 dotenv.config();
 
@@ -44,5 +45,8 @@ app.use("/artist", artistRoutes);
 app.use("/album", albumRoutes);
 
 app.use("/users", userRoutes);
+
+app.use(notFound);
+app.use(errorHandler);
 
 app.listen(5000, console.log("Running on port 5000"));

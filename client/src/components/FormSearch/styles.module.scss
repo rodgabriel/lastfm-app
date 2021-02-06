@@ -22,4 +22,11 @@
     letter-spacing: 0.6rem;
     text-transform: uppercase;
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
 }

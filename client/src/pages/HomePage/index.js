@@ -25,7 +25,6 @@ const HomePage = () => {
     dispatch(buscarTopArtists());
   }, [dispatch]);
 
-  console.log(topArtists);
   return (
     <div className={wrapper}>
       <main className={main}>
@@ -41,7 +40,9 @@ const HomePage = () => {
               </h1>
             ) : (
               topArtists.map((artist, index) => {
-                return <Card artist={artist} position={index} />;
+                return (
+                  <Card key={artist.name} artist={artist} position={index} />
+                );
               })
             )}
           </div>

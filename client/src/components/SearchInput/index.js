@@ -11,6 +11,8 @@ const Index = ({ placeholder, search }) => {
   const history = useHistory();
   const dispatch = useDispatch();
   const buscarPor = useSelector((state) => state.buscarPor);
+  const { userData } = useSelector((state) => state.userLogin);
+  const userId = userData ? userData._id : "000";
 
   const [searchTerm, setSearchTerm] = useState({ artist: "", album: "" });
 
@@ -32,7 +34,7 @@ const Index = ({ placeholder, search }) => {
       buscarPor === "artist" &&
         setSearchTerm((state) => ({ ...state, album: "" }));
       // salva pesquisa e redireciona para a página do artista
-      dispatch(salvarHistoricoPesquisa(searchTerm));
+      dispatch(salvarHistoricoPesquisa(searchTerm, userId));
       history.push(`/artist=${searchTerm.artist}`);
     }
   };
@@ -40,7 +42,7 @@ const Index = ({ placeholder, search }) => {
   const searchAlbum = () => {
     if (searchTerm.artist !== "" && searchTerm.album !== "") {
       // salva pesquisa e redireciona para a página do album
-      dispatch(salvarHistoricoPesquisa(searchTerm));
+      dispatch(salvarHistoricoPesquisa(searchTerm, userId));
       history.push(`/artist=${searchTerm.artist}/album=${searchTerm.album}`);
     }
   };

@@ -1,4 +1,3 @@
-import uuid from "react-uuid";
 const historicoPesquisaReducer = (
   state = { historicoPesquisa: {} },
   action
@@ -7,7 +6,7 @@ const historicoPesquisaReducer = (
     case "SAVE_SEARCH_HISTORY":
       return {
         ...state,
-        [`${uuid()}`]: action.payload,
+        [`${new Date().getTime()}`]: action.payload,
       };
     default:
       return state;
