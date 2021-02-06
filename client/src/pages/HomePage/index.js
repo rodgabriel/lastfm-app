@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 
 // css classes
@@ -19,6 +20,7 @@ import Card from "../../components/Card";
 import SearchInput from "../../components/SearchInput";
 
 const HomePage = () => {
+  const buscarPor = useSelector((state) => state.buscarPor);
   const [topArtists, setTopArtists] = useState([]);
 
   useEffect(() => {
@@ -48,7 +50,14 @@ const HomePage = () => {
       </nav>
       <main className={main}>
         <section className={searchSection}>
-          <SearchInput />
+          <SearchInput
+            header
+            placeholder="Digite o nome do artista"
+            search={buscarPor === "artist"}
+          />
+          {buscarPor === "album" && (
+            <SearchInput placeholder="Digite o nome do álbum" search />
+          )}
         </section>
         <section className={cardSection}>
           <h1>Top 10 Artistas no Brasil</h1>

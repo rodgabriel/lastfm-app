@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 // styles
 import {
@@ -8,43 +9,48 @@ import {
   active,
 } from "./styles.module.scss";
 
+// actions
+import {
+  selecionarBuscaPorAlbum,
+  selecionarBuscaPorArtist,
+} from "../../actions/selecionarMetodoBusca";
+
 const Index = () => {
-  const [selected, setSelected] = useState("Artista");
+  const dispatch = useDispatch();
+  const buscarPor = useSelector((state) => state.buscarPor);
 
   return (
     <div className={inputContainer}>
       <>
         <label
-          className={`${inputLabel} ${selected === "Artista" ? active : ""}`}
+          className={`${inputLabel} ${buscarPor === "artist" ? active : ""}`}
           for="Artista"
         >
           <p>Artista</p>
-          <i className="fas fa-microphone-alt"></i>
         </label>
         <input
           className={inputCheck}
           id="Artista"
           type="radio"
-          name="Artista"
-          checked={selected === "Artista" ? true : false}
-          onClick={(e) => setSelected(e.target.name)}
+          name="artist"
+          checked={buscarPor === "artist" ? true : false}
+          onChange={() => dispatch(selecionarBuscaPorArtist)}
         ></input>
       </>
       <>
         <label
-          className={`${inputLabel} ${selected === "Album" ? active : ""}`}
+          className={`${inputLabel} ${buscarPor === "album" ? active : ""}`}
           for="Album"
         >
           <p>Álbum</p>
-          <i className="fas fa-compact-disc"></i>
         </label>
         <input
           className={inputCheck}
           id="Album"
           type="radio"
-          name="Album"
-          checked={selected === "Album" ? true : false}
-          onClick={(e) => setSelected(e.target.name)}
+          name="album"
+          checked={buscarPor === "album" ? true : false}
+          onChange={() => dispatch(selecionarBuscaPorAlbum)}
         ></input>
       </>
     </div>
