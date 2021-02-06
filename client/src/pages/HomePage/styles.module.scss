@@ -1,0 +1,35 @@
+.main {
+  padding: 0 8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  @media (max-width: 768px) {
+    padding: 0 4rem;
+  }
+}
+
+.cardSection {
+  width: 100%;
+  > h1 {
+    font-size: 4rem;
+    margin-bottom: 4rem;
+    text-align: center;
+  }
+}
+
+.cardContainer {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchSection {
+  width: 100%;
+  flex: 1;
+  margin: 12rem 0;
+}
