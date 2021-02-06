@@ -3,8 +3,11 @@ import asyncHandler from "express-async-handler";
 import cors from "cors";
 import axios from "axios";
 import dotenv from "dotenv";
+import connectDB from "./config/db.js";
 
 dotenv.config();
+
+connectDB();
 
 const lastfmUrl = "http://ws.audioscrobbler.com/2.0/";
 const musicBrainzUrl = "https://musicbrainz.org/ws/2/";

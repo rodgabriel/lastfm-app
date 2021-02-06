@@ -25,7 +25,9 @@ import Tag from "../../components/Tag";
 
 const Index = ({ match }) => {
   const dispatch = useDispatch();
-  const { album, loading, error } = useSelector((state) => state.albumData);
+  const { album, loading, error, message } = useSelector(
+    (state) => state.albumData
+  );
 
   useEffect(() => {
     dispatch(buscarAlbumData(match.params.artist, match.params.album));
@@ -105,7 +107,7 @@ const Index = ({ match }) => {
       ) : loading ? (
         <p>Loading...</p>
       ) : (
-        error && <h1>{error}</h1>
+        error && <h1>{error && message}</h1>
       )}
     </div>
   );
