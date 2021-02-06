@@ -15,11 +15,13 @@ const Index = ({ placeholder, search }) => {
   const [searchTerm, setSearchTerm] = useState({ artist: "", album: "" });
 
   const onSearchArtist = (e) => {
-    if (e.keyCode === 13) {
-      buscarPor === "artist" &&
-        setSearchTerm((state) => ({ ...state, album: "" }));
-      dispatch(salvarHistoricoPesquisa(searchTerm));
-      history.push(`/artist=${searchTerm.artist}`);
+    if (searchTerm.artist !== "") {
+      if (e.keyCode === 13) {
+        buscarPor === "artist" &&
+          setSearchTerm((state) => ({ ...state, album: "" }));
+        dispatch(salvarHistoricoPesquisa(searchTerm));
+        history.push(`/artist=${searchTerm.artist}`);
+      }
     }
   };
 
