@@ -1,7 +1,8 @@
 .wrapper {
   color: #ffffff;
   height: 100%;
-  background: linear-gradient(to bottom, #3b2e55, #131330);
+
+  padding: 0 80px;
 }
 
 .navbar {
@@ -9,7 +10,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 80px;
 
   & strong {
     font-size: 2.4rem;
@@ -25,4 +25,34 @@
   .userImg {
     margin-right: 2rem;
   }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.cardSection {
+  > h1 {
+    font-size: 4rem;
+    margin-bottom: 4rem;
+    text-align: center;
+  }
+}
+
+.cardContainer {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchSection {
+  width: 100%;
+  flex: 1;
+  margin: 12rem 0;
 }
