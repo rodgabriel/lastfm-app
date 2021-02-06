@@ -14,21 +14,34 @@ const Index = ({ placeholder, search }) => {
 
   const [searchTerm, setSearchTerm] = useState({ artist: "", album: "" });
 
-  const onSearchArtist = (e) => {
-    if (searchTerm.artist !== "") {
-      if (e.keyCode === 13) {
-        buscarPor === "artist" &&
-          setSearchTerm((state) => ({ ...state, album: "" }));
-        dispatch(salvarHistoricoPesquisa(searchTerm));
-        history.push(`/artist=${searchTerm.artist}`);
-      }
+  const onSearchArtistEnter = (e) => {
+    if (e.keyCode === 13) {
+      searchArtist();
     }
   };
 
-  const onSearchAlbum = (e) => {
+  const onSearchAlbumEnter = (e) => {
     if (e.keyCode === 13) {
+      searchAlbum();
+    }
+  };
+
+  const searchArtist = () => {
+    if (searchTerm.artist !== "") {
+      // certificar de que album está vazio
+      buscarPor === "artist" &&
+        setSearchTerm((state) => ({ ...state, album: "" }));
+      // salva pesquisa e redireciona para a página do artista
       dispatch(salvarHistoricoPesquisa(searchTerm));
-      history.push(`/artist=${searchTerm.artist}/album=${searchTerm.artist}`);
+      history.push(`/artist=${searchTerm.artist}`);
+    }
+  };
+
+  const searchAlbum = () => {
+    if (searchTerm.artist !== "" && searchTerm.album !== "") {
+      // salva pesquisa e redireciona para a página do album
+      dispatch(salvarHistoricoPesquisa(searchTerm));
+      history.push(`/artist=${searchTerm.artist}/album=${searchTerm.album}`);
     }
   };
 
@@ -52,11 +65,11 @@ const Index = ({ placeholder, search }) => {
             setSearchTerm((state) => ({ ...state, artist: e.target.value }))
           }
           onKeyDown={(e) =>
-            buscarPor === "artist" ? onSearchArtist(e) : onNextInput(e)
+            buscarPor === "artist" ? onSearchArtistEnter(e) : onNextInput(e)
           }
         />
         {buscarPor !== "album" && (
-          <button className={searchIcon}>
+          <button onClick={searchArtist} className={searchIcon}>
             <i className="fas fa-search"></i>
           </button>
         )}
@@ -72,9 +85,9 @@ const Index = ({ placeholder, search }) => {
             onChange={(e) =>
               setSearchTerm((state) => ({ ...state, album: e.target.value }))
             }
-            onKeyDown={(e) => onSearchAlbum(e)}
+            onKeyDown={(e) => onSearchAlbumEnter(e)}
           />
-          <button className={searchIcon}>
+          <button onClick={searchAlbum} className={searchIcon}>
             <i className="fas fa-search"></i>
           </button>
         </label>
