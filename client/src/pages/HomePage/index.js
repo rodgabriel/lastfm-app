@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
-import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+
+// action
+import buscarTopArtists from "../../actions/buscarTopArtists";
 
 // css classes
 import {
@@ -16,22 +18,14 @@ import Card from "../../components/Card";
 import FormSearch from "../../components/FormSearch";
 
 const HomePage = () => {
-  const [topArtists, setTopArtists] = useState([]);
+  const dispatch = useDispatch();
+  const topArtists = useSelector((state) => state.topArtists);
 
   useEffect(() => {
-    async function getTopArtists() {
-      const { data } = await axios.post("http://localhost:5000/top", {
-        params: {
-          method: "geo.gettopartists",
-          country: "brazil",
-        },
-      });
-      setTopArtists(data);
-    }
+    dispatch(buscarTopArtists());
+  }, [dispatch]);
 
-    getTopArtists();
-  }, []);
-
+  console.log(topArtists);
   return (
     <div className={wrapper}>
       <main className={main}>
@@ -41,10 +35,15 @@ const HomePage = () => {
         <section className={cardSection}>
           <h1>Top 10 Artistas no Brasil</h1>
           <div className={cardContainer}>
-            {topArtists &&
+            {topArtists && topArtists.error ? (
+              <h1>
+                Desculpe, não podemos mostrar os Top 10 Artistas no momento...
+              </h1>
+            ) : (
               topArtists.map((artist, index) => {
                 return <Card artist={artist} position={index} />;
-              })}
+              })
+            )}
           </div>
         </section>
       </main>

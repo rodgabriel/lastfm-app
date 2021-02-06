@@ -6,11 +6,11 @@ const Index = () => {
   return (
     <nav className={navbar}>
       <Link to="/">
-        <strong>LAST.FM SEARCHER</strong>
+        <strong>LAST.FM</strong>
       </Link>
       <div className={userSection}>
-        <div className={userImg}>USER</div>
-        <div className={logBtn}>SIGN IN | OUT</div>
+        {/* <div className={userImg}>USER</div> */}
+        <div className={logBtn}>SIGN IN</div>
       </div>
     </nav>
   );
