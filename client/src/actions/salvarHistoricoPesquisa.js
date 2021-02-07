@@ -2,12 +2,7 @@ const salvarHistoricoPesquisa = ({ artist, album }, userId) => async (
   dispatch,
   getState
 ) => {
-  // verifica se o máximo de pesquisas salvas por usuário já foi atingido
-  // se verdadeiro, exclui a pesquisa mais antiga do usuário antes de salvar a nova
-  const historicoLengthPerUser = getState().historicoPesquisa.filter(
-    (p) => Object.values(p)[0].userId === userId
-  ).length;
-  if (historicoLengthPerUser >= 5) {
+  if (getState().historicoPesquisa.length >= 10) {
     getState().historicoPesquisa.shift();
   }
 

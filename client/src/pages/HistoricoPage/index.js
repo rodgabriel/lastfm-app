@@ -4,6 +4,9 @@ import {
   container,
   pesquisasContent,
   pesquisaCard,
+  pesquisaArtist,
+  pesquisaAlbum,
+  pesquisaDate,
 } from "./styles.module.scss";
 
 const Index = () => {
@@ -18,6 +21,7 @@ const Index = () => {
       {userData && (
         <div className={pesquisasContent}>
           {historicoPesquisa
+            .reverse()
             .map((pesquisaObj) => Object.entries(pesquisaObj))
             .filter((pesquisa) => {
               return pesquisa[0][1].userId === userId && pesquisa;
@@ -32,17 +36,19 @@ const Index = () => {
               );
               return (
                 <div key={index} className={pesquisaCard}>
-                  <h3>
-                    <strong>Artista: </strong>
-                    {pesquisa.artist}
-                  </h3>
+                  <div className={pesquisaArtist}>
+                    <p>Artista: </p>
+                    <strong>{pesquisa.artist}</strong>
+                  </div>
                   {pesquisa.album && (
-                    <h3>
-                      <strong>Álbum: </strong>
-                      {pesquisa.album}
-                    </h3>
+                    <div className={pesquisaAlbum}>
+                      <p>Álbum: </p>
+                      <strong>{pesquisa.album}</strong>
+                    </div>
                   )}
-                  <p>{String(date)}</p>
+                  <div className={pesquisaDate}>
+                    <p>{String(date)}</p>
+                  </div>
                 </div>
               );
             })}

@@ -28,8 +28,10 @@ const Index = ({ history }) => {
         {userData ? (
           <>
             <Dropdown title={userData.name}>
-              <Link to="/pesquisas">Suas pesquisas</Link>
-              <span onClick={logoutHandler}>Sair</span>
+              <Link to="/pesquisas">Buscas recentes</Link>
+              <div style={{ width: "100%" }} onClick={logoutHandler}>
+                Sair
+              </div>
             </Dropdown>
           </>
         ) : (

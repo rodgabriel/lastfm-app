@@ -19,7 +19,7 @@ function App() {
       <Switch>
         <Route path="/pesquisas" exact component={HistoricoPage} />
         <Route path="/register" exact component={RegisterPage} />
-        <Route path="/login" exact component={LoginPage} />
+        <Route path="/login" component={LoginPage} />
         <Route path="/" exact component={HomePage} />
         <Route path="/artist=:artist" exact component={ArtistPage} />
         <Route
