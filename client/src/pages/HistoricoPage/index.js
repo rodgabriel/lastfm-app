@@ -10,16 +10,19 @@ const Index = () => {
   const historicoPesquisa = useSelector((state) => state.historicoPesquisa);
 
   const { userData } = useSelector((state) => state.userLogin);
+  const userId = userData ? userData._id : "000";
 
-  console.log(Object.entries(historicoPesquisa).map((t) => t));
   return (
     <div className={container}>
       <h1>Histórico de pesquisas</h1>
       {userData && (
         <div className={pesquisasContent}>
-          {Object.entries(historicoPesquisa)
-            .filter((pesquisa) => pesquisa[1].userId === userData._id)
-            .map(([timestamp, pesquisa]) => {
+          {historicoPesquisa
+            .map((pesquisaObj) => Object.entries(pesquisaObj))
+            .filter((pesquisa) => {
+              return pesquisa[0][1].userId === userId && pesquisa;
+            })
+            .map(([[timestamp, pesquisa]], index) => {
               const date = new Date(Number(timestamp)).toLocaleDateString(
                 "pt-BR",
                 {
@@ -28,7 +31,7 @@ const Index = () => {
                 }
               );
               return (
-                <div className={pesquisaCard}>
+                <div key={index} className={pesquisaCard}>
                   <h3>
                     <strong>Artista: </strong>
                     {pesquisa.artist}

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { register } from "../../actions/userActions";
@@ -18,7 +18,7 @@ const Index = ({ history }) => {
   const [message, setMessage] = useState(null);
 
   const userRegister = useSelector((state) => state.userRegister);
-  const { loading, error, userData } = userRegister;
+  const { error } = userRegister;
 
   const submitHandler = (e) => {
     e.preventDefault();
