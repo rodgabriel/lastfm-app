@@ -26,7 +26,7 @@ const userDataLocalStorage = localStorage.getItem("userData")
 
 const historicoPesquisaLocalStorage = localStorage.getItem("historicoPesquisa")
   ? JSON.parse(localStorage.getItem("historicoPesquisa"))
-  : {};
+  : [];
 
 const initialState = {
   buscarPor: "artist",

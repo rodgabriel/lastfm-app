@@ -1,13 +1,10 @@
 const historicoPesquisaReducer = (
-  state = { historicoPesquisa: {} },
+  state = { historicoPesquisa: [] },
   action
 ) => {
   switch (action.type) {
     case "SAVE_SEARCH_HISTORY":
-      return {
-        ...state,
-        [`${new Date().getTime()}`]: action.payload,
-      };
+      return [...state, { [`${new Date().getTime()}`]: action.payload }];
     default:
       return state;
   }
