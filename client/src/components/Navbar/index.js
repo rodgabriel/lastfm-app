@@ -29,7 +29,11 @@ const Index = ({ history }) => {
           <>
             <Dropdown title={userData.name}>
               <Link to="/pesquisas">Buscas recentes</Link>
-              <div style={{ width: "100%" }} onClick={logoutHandler}>
+              <div
+                id="logout"
+                style={{ width: "100%" }}
+                onClick={logoutHandler}
+              >
                 Sair
               </div>
             </Dropdown>
@@ -37,7 +41,9 @@ const Index = ({ history }) => {
         ) : (
           <div>
             <Link to="/login">
-              <button className={logBtn}>ENTRAR</button>
+              <button id="login" className={logBtn}>
+                ENTRAR
+              </button>
             </Link>
           </div>
         )}

@@ -14,6 +14,7 @@ connectDB();
 import albumRoutes from "./routes/albumRoutes.js";
 import artistRoutes from "./routes/artistRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
+import clearDatabaseRoute from "./routes/clearDatabaseRoute.js";
 
 const lastfmUrl = "http://ws.audioscrobbler.com/2.0/";
 const musicBrainzUrl = "https://musicbrainz.org/ws/2/";
@@ -45,6 +46,8 @@ app.use("/artist", artistRoutes);
 app.use("/album", albumRoutes);
 
 app.use("/users", userRoutes);
+
+app.use("/clearDatabase", clearDatabaseRoute);
 
 app.use(notFound);
 app.use(errorHandler);

@@ -11,7 +11,7 @@ import {
 const Index = ({ title, children }) => {
   const inputRef = useRef(null);
   return (
-    <label className={dropdown}>
+    <label id="dropdown-menu" className={dropdown}>
       <div className={dropdownTitle}>{title}</div>
 
       <input ref={inputRef} type="checkbox" className={ddInput} id="test" />

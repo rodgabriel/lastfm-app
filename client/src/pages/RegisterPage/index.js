@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { register } from "../../actions/userActions";
@@ -18,7 +18,13 @@ const Index = ({ history }) => {
   const [message, setMessage] = useState(null);
 
   const userRegister = useSelector((state) => state.userRegister);
-  const { error } = userRegister;
+  const { error, userData } = userRegister;
+
+  useEffect(() => {
+    if (userData) {
+      history.push("/");
+    }
+  }, [history, userData]);
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -28,7 +34,7 @@ const Index = ({ history }) => {
       dispatch(register({ name, email, password }));
     }
   };
-  console.log(email, password);
+
   return (
     <div className={container}>
       <div className={formWrapper}>
@@ -37,6 +43,7 @@ const Index = ({ history }) => {
         <form onSubmit={submitHandler}>
           <label>Name:</label>
           <input
+            id="name"
             required
             type="text"
             placeholder="Seu nome"
@@ -45,6 +52,7 @@ const Index = ({ history }) => {
           />
           <label>Email:</label>
           <input
+            id="email"
             required
             type="email"
             placeholder="email@email.com"
@@ -53,6 +61,7 @@ const Index = ({ history }) => {
           />
           <label>Senha:</label>
           <input
+            id="password"
             required
             type="password"
             placeholder="****"
@@ -61,6 +70,7 @@ const Index = ({ history }) => {
           />
           <label>Confirme a senha:</label>
           <input
+            id="confirmPassword"
             required
             type="password"
             placeholder=""
@@ -68,7 +78,9 @@ const Index = ({ history }) => {
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
           {message && <h3>{message}</h3>}
-          <button type="submit">Registrar</button>
+          <button id="registrar" type="submit">
+            Registrar
+          </button>
         </form>
 
         <p>Já tem uma conta?</p>

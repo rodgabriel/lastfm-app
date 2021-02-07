@@ -35,6 +35,7 @@ const Index = ({ location, history }) => {
         <form onSubmit={submitHandler}>
           <label>Email:</label>
           <input
+            id="email"
             required
             type="email"
             placeholder="email@email.com"
@@ -43,6 +44,7 @@ const Index = ({ location, history }) => {
           />
           <label>Password:</label>
           <input
+            id="password"
             required
             type="password"
             placeholder="********"

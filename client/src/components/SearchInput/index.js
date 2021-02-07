@@ -59,6 +59,7 @@ const Index = ({ placeholder, search }) => {
     <>
       <label className={labelStyle}>
         <input
+          id="artist"
           type="text"
           placeholder="Nome do artista"
           className={inputStyle}
@@ -79,6 +80,7 @@ const Index = ({ placeholder, search }) => {
       {buscarPor === "album" && (
         <label className={labelStyle}>
           <input
+            id="album"
             ref={albumInput}
             type="text"
             placeholder="Nome do álbum"
