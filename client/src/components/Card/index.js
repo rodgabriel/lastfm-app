@@ -1,3 +1,4 @@
+import React from "react";
 // css classes
 import {
   card,
@@ -25,4 +26,4 @@ const index = ({ artist, position }) => {
   );
 };
 
-export default index;
+export default React.memo(index);

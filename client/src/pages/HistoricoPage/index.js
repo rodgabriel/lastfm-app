@@ -1,6 +1,10 @@
 import { useSelector } from "react-redux";
 // styles
-import { container, pesquisasContent } from "./styles.module.scss";
+import {
+  container,
+  pesquisasContent,
+  pesquisaCard,
+} from "./styles.module.scss";
 
 const Index = () => {
   const historicoPesquisa = useSelector((state) => state.historicoPesquisa);
@@ -24,10 +28,19 @@ const Index = () => {
                 }
               );
               return (
-                <>
-                  <h3>{pesquisa.artist}</h3>
+                <div className={pesquisaCard}>
+                  <h3>
+                    <strong>Artista: </strong>
+                    {pesquisa.artist}
+                  </h3>
+                  {pesquisa.album && (
+                    <h3>
+                      <strong>Álbum: </strong>
+                      {pesquisa.album}
+                    </h3>
+                  )}
                   <p>{String(date)}</p>
-                </>
+                </div>
               );
             })}
         </div>

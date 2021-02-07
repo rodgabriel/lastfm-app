@@ -1,14 +1,11 @@
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { Nav, NavDropdown } from "react-bootstrap";
+
+// component
+import Dropdown from "../Dropdown";
 
 // css classes
-import {
-  navbar,
-  userSection,
-  dropdownItemStyle,
-  logBtn,
-} from "./styles.module.scss";
+import { navbar, userSection, logBtn } from "./styles.module.scss";
 
 // action
 import { logout } from "../../actions/userActions";
@@ -29,18 +26,12 @@ const Index = ({ history }) => {
       </Link>
       <div className={userSection}>
         {userData ? (
-          <Nav>
-            <NavDropdown title={userData.name} id="username">
-              <NavDropdown.Item>
-                <Link to="/pesquisas" className={dropdownItemStyle}>
-                  Pesquisas
-                </Link>
-              </NavDropdown.Item>
-              <NavDropdown.Item onClick={logoutHandler}>
-                <span className={dropdownItemStyle}>Sair</span>
-              </NavDropdown.Item>
-            </NavDropdown>
-          </Nav>
+          <>
+            <Dropdown title={userData.name}>
+              <Link to="/pesquisas">Suas pesquisas</Link>
+              <span onClick={logoutHandler}>Sair</span>
+            </Dropdown>
+          </>
         ) : (
           <div>
             <Link to="/login">
