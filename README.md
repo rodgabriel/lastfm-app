@@ -56,7 +56,7 @@ yarn dev
 
 Suíte de testes utilizando [Cypress](https://www.cypress.io/).
 
-Acesse o frontend da aplicação:
+Com o projeto rodando (tanto frontend, quanto backend), acesse o frontend da aplicação e execute o cypress:
 ```shell
 >lastfm-app cd client
 yarn cypress
