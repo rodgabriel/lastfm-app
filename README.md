@@ -42,8 +42,8 @@ No frontend:
 yarn
 ```
 
-Volte para a pasta do projeto e rode o projeto:
+Volte para a root do projeto e rode o projeto:
 ```shell
 >lastfm-app/client cd ../
-yarn
+yarn dev
 ```
