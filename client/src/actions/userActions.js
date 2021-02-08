@@ -9,7 +9,7 @@ import {
   USER_REGISTER_SUCCESS,
 } from "../constants/userConstants";
 
-export const login = ({ email, password }) => async (dispatch) => {
+export const login = ({ email, password }) => async (dispatch, getState) => {
   try {
     dispatch({
       type: USER_LOGIN_REQUEST,
@@ -33,6 +33,18 @@ export const login = ({ email, password }) => async (dispatch) => {
     });
 
     localStorage.setItem("userData", JSON.stringify(data));
+
+    const userId = getState().userLogin.userData._id;
+
+    // checar se histórico existe. se não existir, criar histórico
+    localStorage.getItem(`historico${userId}`)
+      ? (getState().historicoPesquisa = JSON.parse(
+          localStorage.getItem(`historico${userId}`)
+        ))
+      : localStorage.setItem(
+          `historico${userId}`,
+          JSON.stringify(getState().historicoPesquisa)
+        );
   } catch (error) {
     dispatch({
       type: USER_LOGIN_FAIL,

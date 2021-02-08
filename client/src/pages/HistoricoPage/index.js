@@ -13,7 +13,6 @@ const Index = () => {
   const historicoPesquisa = useSelector((state) => state.historicoPesquisa);
 
   const { userData } = useSelector((state) => state.userLogin);
-  const userId = userData ? userData._id : "000";
 
   return (
     <div className={mainContainer}>
@@ -21,11 +20,11 @@ const Index = () => {
       {userData && (
         <div className={pesquisasContent}>
           {historicoPesquisa
-            .reverse()
+            // orderna as pesquisas da mais recente à mais antiga
+            .sort((a, b) => (Object.keys(a)[0] > Object.keys(b)[0] ? -1 : 1))
+            // pesquisa é um objeto {timestamp: {termos de busca}}
+            // Object.entries aqui retorna um array [timestamp, {termos de busca}]
             .map((pesquisaObj) => Object.entries(pesquisaObj))
-            .filter((pesquisa) => {
-              return pesquisa[0][1].userId === userId && pesquisa;
-            })
             .map(([[timestamp, pesquisa]], index) => {
               const date = new Date(Number(timestamp)).toLocaleDateString(
                 "pt-BR",
