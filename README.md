@@ -18,3 +18,12 @@ O backend em NodeJS, Express e MongoDB permite o cadastro de usuários.
 
 - Ter o gerenciador de dependências yarn instalado (npm também funciona, porém recomendo o yarn)
 > [Instalando o yarn](https://classic.yarnpkg.com/pt-BR/docs/install/#debian-stable "Clique aqui para aprender a instalar o yarn!")
+
+### Setup
+
+Clone este repositório.
+Com o Git instalado, digite no terminal:
+```shell
+cd <diretório da sua preferência>
+git clone https://github.com/rodgabriel/lastfm-app.git
+```
