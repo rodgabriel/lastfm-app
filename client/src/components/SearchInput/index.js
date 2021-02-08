@@ -33,16 +33,20 @@ const Index = ({ placeholder, search }) => {
       // certificar de que album está vazio
       buscarPor === "artist" &&
         setSearchTerm((state) => ({ ...state, album: "" }));
-      // salva pesquisa e redireciona para a página do artista
-      dispatch(salvarHistoricoPesquisa(searchTerm, userId));
+      if (userData) {
+        // salva pesquisa e redireciona para a página do artista
+        dispatch(salvarHistoricoPesquisa(searchTerm, userId));
+      }
       history.push(`/artist=${searchTerm.artist}`);
     }
   };
 
   const searchAlbum = () => {
     if (searchTerm.artist !== "" && searchTerm.album !== "") {
-      // salva pesquisa e redireciona para a página do album
-      dispatch(salvarHistoricoPesquisa(searchTerm, userId));
+      if (userData) {
+        // salva pesquisa e redireciona para a página do album
+        dispatch(salvarHistoricoPesquisa(searchTerm, userId));
+      }
       history.push(`/artist=${searchTerm.artist}/album=${searchTerm.album}`);
     }
   };
