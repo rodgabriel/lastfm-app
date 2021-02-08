@@ -1,0 +1,2 @@
+export const BUSCAR_POR_ARTIST = "BUSCAR_POR_ARTIST";
+export const BUSCAR_POR_ALBUM = "BUSCAR_POR_ALBUM";

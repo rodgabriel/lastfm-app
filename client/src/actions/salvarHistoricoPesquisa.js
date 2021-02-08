@@ -1,3 +1,5 @@
+import { SAVE_SEARCH_HISTORY } from "../constants/historicoPesquisaContansts";
+
 const salvarHistoricoPesquisa = ({ artist, album }, userId) => async (
   dispatch,
   getState
@@ -16,7 +18,7 @@ const salvarHistoricoPesquisa = ({ artist, album }, userId) => async (
         JSON.stringify(getState().historicoPesquisa)
       );
 
-  dispatch({ type: "SAVE_SEARCH_HISTORY", payload: { artist, album } });
+  dispatch({ type: SAVE_SEARCH_HISTORY, payload: { artist, album } });
 
   localStorage.setItem(
     `historico${userId}`,

@@ -1,3 +1,5 @@
+import { LOAD_SEARCH_HISTORY } from "../constants/historicoPesquisaContansts";
+
 const loadHistoricoPesquisa = (userId) => async (dispatch, getState) => {
   // checar se histórico existe. se não existir, criar histórico
   localStorage.getItem(`historico${userId}`)
@@ -10,7 +12,7 @@ const loadHistoricoPesquisa = (userId) => async (dispatch, getState) => {
       );
 
   dispatch({
-    type: "LOAD_SEARCH_HISTORY",
+    type: LOAD_SEARCH_HISTORY,
     payload: getState().historicoPesquisa,
   });
 };
