@@ -62,3 +62,4 @@ Com o projeto rodando (tanto frontend, quanto backend), acesse o frontend da apl
 yarn cypress
 ```
 
+![Suíte de testes](./readme-assets/suite-testes.jpg)
