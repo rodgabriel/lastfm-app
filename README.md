@@ -27,3 +27,23 @@ Com o Git instalado, digite no terminal:
 cd <diretório da sua preferência>
 git clone https://github.com/rodgabriel/lastfm-app.git
 ```
+
+### Inicialização 
+
+Acesse a pasta do projeto que você clonou e instale as depedências.
+No backend:
+```shell
+cd lastfm-app
+yarn
+```
+No frontend:
+```shell
+>lastfm-app/ cd client
+yarn
+```
+
+Volte para a pasta do projeto e rode o projeto:
+```shell
+>lastfm-app/client cd ../
+yarn
+```
