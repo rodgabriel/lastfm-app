@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Dropdown from "../Dropdown";
 
 // css classes
-import { navbar, userSection, logBtn } from "./styles.module.scss";
+import { navbarContainer, userSection, logBtn } from "./styles.module.scss";
 
 // action
 import { logout } from "../../actions/userActions";
@@ -20,7 +20,7 @@ const Index = ({ history }) => {
   };
 
   return (
-    <nav className={navbar}>
+    <nav className={navbarContainer}>
       <Link to="/">
         <strong>LAST.FM</strong>
       </Link>

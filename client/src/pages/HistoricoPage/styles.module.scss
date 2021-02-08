@@ -1,10 +1,7 @@
-.container {
-  padding: 4rem 8rem 0;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+@import "../../styles/mixins";
+
+.mainContainer {
+  @include main-container($alignItems: center);
 
   h1 {
     font-size: 8rem;
@@ -14,23 +11,16 @@
     margin-right: 3rem;
 
     @media (max-width: 768px) {
-      font-size: 8vw;
+      font-size: 7.5vw;
     }
-  }
-
-  @media (max-width: 768px) {
-    padding: 0 2rem;
   }
 }
 
 .pesquisasContent {
-  width: 100%;
-  max-width: 900px;
-  background: #3b2e55aa;
-  padding: 3rem 4rem;
-  border-radius: 1.2rem;
-  backdrop-filter: blur(1rem);
-  color: #fff;
+  @include searchSecondaryContent(3rem 4rem, 4rem 0, 2rem, 2rem 0);
+
+  max-width: 90rem;
+
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -38,7 +28,6 @@
   font-size: 1.8rem;
   text-transform: capitalize;
   font-weight: lighter;
-  margin: 4rem 0;
 
   > div > * {
     margin-bottom: 1rem;
@@ -46,7 +35,7 @@
 
   .pesquisaCard {
     width: 100%;
-    background: #ffffff33;
+    background: #ffffff23;
     color: #fff;
     padding: 1.5rem 3rem;
     border-radius: 0.4rem;
@@ -72,14 +61,5 @@
         margin-right: 1rem;
       }
     }
-  }
-
-  @media (max-width: 768px) {
-    padding: 2rem;
-    margin: 2rem 0;
-  }
-
-  @media (min-width: 960px) {
-    margin-right: 8rem;
   }
 }

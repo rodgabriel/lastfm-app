@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 // styles
 import {
-  container,
+  mainContainer,
   pesquisasContent,
   pesquisaCard,
   pesquisaArtist,
@@ -16,7 +16,7 @@ const Index = () => {
   const userId = userData ? userData._id : "000";
 
   return (
-    <div className={container}>
+    <div className={mainContainer}>
       <h1>Histórico de pesquisas</h1>
       {userData && (
         <div className={pesquisasContent}>

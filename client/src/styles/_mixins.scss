@@ -1,0 +1,214 @@
+@mixin main-container(
+  $direction: column,
+  $justify: flex-start,
+  $alignItems: flex-start,
+  $paddingTop: 8rem,
+  $paddingTopSmall: 2rem
+) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $alignItems;
+  width: 100%;
+  padding: $paddingTop 8rem 0;
+
+  @media (max-width: 768px) {
+    padding: $paddingTopSmall 2.5rem 0;
+  }
+}
+
+@mixin searchHeader {
+  .headerName {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    h1 {
+      font-size: 8rem;
+      font-weight: bold;
+      letter-spacing: 0.6rem;
+      text-transform: uppercase;
+      margin-right: 3rem;
+
+      @media (max-width: 768px) {
+        font-size: 10vw;
+      }
+    }
+
+    i {
+      color: #e4d2ee;
+      font-size: 4rem;
+      cursor: pointer;
+      transition: 0.2s;
+
+      &:hover {
+        color: #d6b5e7;
+      }
+    }
+  }
+
+  .streamingInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 1.2rem;
+  }
+
+  .searchTags {
+    margin: 0.5rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+
+@mixin searchContentContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  @media (max-width: 960px) {
+    flex-direction: column;
+  }
+}
+
+@mixin searchMainContent {
+  flex: 2;
+  margin: 8rem 8rem 8rem 0;
+  width: 100%;
+  max-width: 900px;
+  background: #3b2e55aa;
+  padding: 4rem 6rem;
+  border-radius: 1.2rem;
+  backdrop-filter: blur(1rem);
+  color: #fff;
+
+  h3 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 4rem;
+  }
+
+  p {
+    font-size: 1.8rem;
+    font-weight: lighter;
+    text-align: justify;
+  }
+
+  @media (max-width: 960px) {
+    padding: 3rem 4rem;
+    margin: 4rem 0 0;
+  }
+}
+
+@mixin searchSecondaryContent(
+  $padding: 4rem 6rem,
+  $margin: 8rem 0,
+  $paddingSmall: 3rem 4rem,
+  $marginSmall: 4rem 0
+) {
+  flex: 1;
+  width: 100%;
+  background: #3b2e55aa;
+  padding: $padding;
+  margin: $margin;
+  border-radius: 1.2rem;
+  backdrop-filter: blur(1rem);
+  color: #fff;
+
+  h3 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 4rem;
+  }
+
+  p {
+    font-size: 1.8rem;
+    font-weight: lighter;
+    text-align: justify;
+  }
+
+  @media (max-width: 768px) {
+    padding: $paddingSmall;
+  }
+
+  @media (max-width: 960px) {
+    margin: $marginSmall;
+  }
+}
+
+@mixin formContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 45rem;
+  height: 100%;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(0.5rem);
+  padding: 2.5rem 1rem;
+  color: #131330;
+  border-radius: 1rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+
+  > form {
+    width: 80%;
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    > label {
+      align-self: flex-start;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    > input {
+      width: 100%;
+      padding: 1rem 2rem;
+      margin-bottom: 2rem;
+      font-size: 1.6rem;
+      border: 1px solid #13133066;
+      border-radius: 0.5rem;
+      background: rgba(255, 255, 255, 0.6);
+    }
+
+    > button {
+      min-width: 100%;
+      padding: 1.4rem 4rem;
+      font-size: 2rem;
+      color: #fff;
+      background: #3b2e55;
+      border: none;
+      border-radius: 1rem;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+      margin: 2rem 0;
+      cursor: pointer;
+
+      transition: 0.2s;
+      &:hover {
+        filter: brightness(1.6);
+      }
+    }
+  }
+
+  > p {
+    font-size: 1.4rem;
+  }
+
+  a {
+    color: #131330 !important;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    width: 90%;
+  }
+}

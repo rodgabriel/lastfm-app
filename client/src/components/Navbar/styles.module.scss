@@ -1,16 +1,12 @@
-.navbar {
-  padding: 0 8rem;
+@import "../../styles/mixins";
+
+.navbarContainer {
+  @include main-container(row, space-between, center, 0, 0);
+
   height: 10vh;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 
   & strong {
     font-size: 2.4rem;
-  }
-
-  @media (max-width: 768px) {
-    padding: 0 2rem;
   }
 }
 
