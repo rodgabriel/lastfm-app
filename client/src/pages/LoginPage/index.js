@@ -36,6 +36,7 @@ const Index = ({ location, history }) => {
           <label>Email:</label>
           <input
             id="email"
+            data-cy="email"
             required
             type="email"
             placeholder="email@email.com"
@@ -45,6 +46,7 @@ const Index = ({ location, history }) => {
           <label>Password:</label>
           <input
             id="password"
+            data-cy="password"
             required
             type="password"
             placeholder="********"

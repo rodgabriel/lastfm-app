@@ -44,6 +44,7 @@ const Index = ({ history }) => {
           <label>Name:</label>
           <input
             id="name"
+            data-cy="name"
             required
             type="text"
             placeholder="Seu nome"
@@ -53,6 +54,7 @@ const Index = ({ history }) => {
           <label>Email:</label>
           <input
             id="email"
+            data-cy="email"
             required
             type="email"
             placeholder="email@email.com"
@@ -62,6 +64,7 @@ const Index = ({ history }) => {
           <label>Senha:</label>
           <input
             id="password"
+            data-cy="password"
             required
             type="password"
             placeholder="****"
@@ -71,6 +74,7 @@ const Index = ({ history }) => {
           <label>Confirme a senha:</label>
           <input
             id="confirmPassword"
+            data-cy="confirmPassword"
             required
             type="password"
             placeholder=""
@@ -78,7 +82,7 @@ const Index = ({ history }) => {
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
           {message && <h3>{message}</h3>}
-          <button id="registrar" type="submit">
+          <button data-cy="registrar" type="submit">
             Registrar
           </button>
         </form>
