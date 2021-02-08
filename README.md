@@ -14,5 +14,7 @@ O backend em NodeJS, Express e MongoDB permite o cadastro de usuários.
 ### Requisitos
 
 - Ter o NodeJS instalado (de preferência a última versão ou superior à v14.15.4)
+> [Instalando o Node](https://nodejs.org/pt-br/download/package-manager/ "Clique aqui para aprender a instalar o Node!")
 
-[Instalando o Node](https://nodejs.org/pt-br/download/package-manager/)
+- Ter o gerenciador de dependências yarn instalado (npm também funciona, porém recomendo o yarn)
+> [Instalando o yarn](https://classic.yarnpkg.com/pt-BR/docs/install/#debian-stable "Clique aqui para aprender a instalar o yarn!")
