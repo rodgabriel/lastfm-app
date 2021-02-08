@@ -29,6 +29,7 @@ const Index = () => {
         </label>
         <input
           className={inputCheck}
+          data-cy="Artista"
           id="Artista"
           type="radio"
           name="artist"
@@ -45,6 +46,7 @@ const Index = () => {
         </label>
         <input
           className={inputCheck}
+          data-cy="Album"
           id="Album"
           type="radio"
           name="album"
