@@ -44,7 +44,8 @@ export const login = ({ email, password }) => async (dispatch) => {
   }
 };
 
-export const logout = () => (dispatch) => {
+export const logout = () => (dispatch, getState) => {
+  getState().historicoPesquisa = [];
   localStorage.removeItem("userData");
   dispatch({
     type: USER_LOGOUT,

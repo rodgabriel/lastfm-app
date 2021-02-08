@@ -20,9 +20,9 @@ const rootReducer = combineReducers({
   userRegister: userRegisterReducer,
 });
 
-const historicoPesquisaLocalStorage = localStorage.getItem("historicoPesquisa")
-  ? JSON.parse(localStorage.getItem("historicoPesquisa"))
-  : [];
+// const historicoPesquisaLocalStorage = localStorage.getItem("historicoPesquisa")
+//   ? JSON.parse(localStorage.getItem("historicoPesquisa"))
+//   : [];
 
 const userDataLocalStorage = localStorage.getItem("userData")
   ? JSON.parse(localStorage.getItem("userData"))
@@ -30,7 +30,7 @@ const userDataLocalStorage = localStorage.getItem("userData")
 
 const initialState = {
   buscarPor: "artist",
-  historicoPesquisa: historicoPesquisaLocalStorage,
+  historicoPesquisa: [],
   artistData: {},
   albumData: {},
   topArtists: [],
