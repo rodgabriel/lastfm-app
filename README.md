@@ -13,13 +13,11 @@ Frontend:
 - [React](https://reactjs.org/)
 - [Sass](https://sass-lang.com/)
 - [Redux](https://redux.js.org/)
-
 Backend:
 - [NodeJS](https://nodejs.org/en/)
 - [Express](https://expressjs.com/)
 - [Mongodb](https://www.mongodb.com/)
-  - Mongoose(https://mongoosejs.com/)
-  
+  - [Mongoose](https://mongoosejs.com/)
 Testes:
 - [Cypress](https://www.cypress.io/)
 
