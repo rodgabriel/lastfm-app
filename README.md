@@ -31,6 +31,7 @@ git clone https://github.com/rodgabriel/lastfm-app.git
 ### Inicialização 
 
 Acesse a pasta do projeto que você clonou e instale as depedências.
+
 No backend:
 ```shell
 cd lastfm-app
