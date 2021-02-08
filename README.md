@@ -15,4 +15,4 @@ O backend em NodeJS, Express e MongoDB permite o cadastro de usuários.
 
 - Ter o NodeJS instalado (de preferência a última versão ou superior à v14.15.4)
 
-![Instalando o Node](https://nodejs.org/pt-br/download/package-manager/)
+[Instalando o Node](https://nodejs.org/pt-br/download/package-manager/)
