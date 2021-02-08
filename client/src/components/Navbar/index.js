@@ -22,7 +22,7 @@ const Index = ({ history }) => {
   return (
     <nav className={navbarContainer}>
       <Link to="/">
-        <strong>LAST.FM</strong>
+        <strong>LASTFM SEARCH</strong>
       </Link>
       <div className={userSection}>
         {userData ? (
