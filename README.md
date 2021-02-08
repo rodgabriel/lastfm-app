@@ -7,6 +7,22 @@ O backend em NodeJS, Express e MongoDB permite o cadastro de usuários.
 Uma vez cadastrado e logado, as pesquisas do usuário são salvas em um item (específico para aquele usuário) no localStorage,
 de forma que ao acessar a página de consulta do histórico de pesquisas, o usuário tem acesso às 10 últimas pesquisas que ele(a) realizou.
 
+### Tecnologias utilizadas
+
+Frontend:
+- [React](https://reactjs.org/)
+- [Sass](https://sass-lang.com/)
+- [Redux](https://redux.js.org/)
+
+Backend:
+- [NodeJS](https://nodejs.org/en/)
+- [Express](https://expressjs.com/)
+- [Mongodb](https://www.mongodb.com/)
+  - Mongoose(https://mongoosejs.com/)
+  
+Testes:
+- [Cypress](https://www.cypress.io/)
+
 ## Screenshots
 
 ![Home page](./readme-assets/landing-page.jpg)
