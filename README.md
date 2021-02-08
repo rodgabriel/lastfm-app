@@ -51,3 +51,14 @@ Volte para a root do projeto e rode o projeto:
 >lastfm-app/client cd ../
 yarn dev
 ```
+
+## Testando a aplicação
+
+Suíte de testes utilizando [Cypress](https://www.cypress.io/).
+
+Acesse o frontend da aplicação:
+```shell
+>lastfm-app cd client
+yarn cypress
+```
+
