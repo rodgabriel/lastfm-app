@@ -16,8 +16,7 @@ Frontend:
 Backend:
 - [NodeJS](https://nodejs.org/en/)
 - [Express](https://expressjs.com/)
-- [Mongodb](https://www.mongodb.com/)
-  - [Mongoose](https://mongoosejs.com/)
+- [MongoDB](https://www.mongodb.com/) e [Mongoose](https://mongoosejs.com/)
   
 Testes:
 - [Cypress](https://www.cypress.io/)
