@@ -4,6 +4,9 @@ Aplicação em React que permite buscas por artista ou por álbum, utilizando a 
 
 O backend em NodeJS, Express e MongoDB permite o cadastro de usuários.
 
+Uma vez cadastrado e logado, as pesquisas do usuário são salvas em um item (específico para aquele usuário) no localStorage,
+de forma que ao acessar a página de consulta do histórico de pesquisas, o usuário tem acesso às 10 últimas pesquisas que ele(a) realizou.
+
 ## Screenshots
 
 ![Home page](./readme-assets/landing-page.jpg)
