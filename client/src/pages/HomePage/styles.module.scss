@@ -1,17 +1,12 @@
-.main {
-  padding: 0 8rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+@import "../../styles/mixins";
 
-  @media (max-width: 768px) {
-    padding: 0 2rem;
-  }
+.mainContainer {
+  @include main-container;
 }
 
-.cardSection {
+.contentSection {
   width: 100%;
+
   > h1 {
     font-size: 4rem;
     margin-bottom: 4rem;
@@ -19,7 +14,7 @@
   }
 }
 
-.cardContainer {
+.cardsContainer {
   width: 100%;
   flex: 1;
   display: flex;
@@ -31,5 +26,5 @@
 .searchSection {
   width: 100%;
   flex: 1;
-  margin: 12rem 0;
+  margin-bottom: 10rem;
 }

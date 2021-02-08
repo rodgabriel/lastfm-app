@@ -7,14 +7,15 @@ import buscarAlbumData from "../../actions/buscarAlbumData";
 
 // css
 import {
-  container,
+  mainContainer,
   albumHeader,
-  albumHeaderName,
+  headerName,
   albumHeaderArtist,
-  albumTags,
+  searchTags,
   albumContent,
   albumTracks,
-  albumInfo,
+  albumWiki,
+  streamingInfo,
   trackInfo,
   trackNumber,
   flexJustifyBetween,
@@ -38,11 +39,11 @@ const Index = ({ match }) => {
   };
 
   return (
-    <div className={container}>
+    <div className={mainContainer}>
       {album && !error ? (
         <>
           <div className={albumHeader}>
-            <div className={albumHeaderName}>
+            <div className={headerName}>
               <h1>{album.name}</h1>
 
               <a target="_blank" rel="noreferrer" href={album.url}>
@@ -55,24 +56,24 @@ const Index = ({ match }) => {
                 <h2>{album.artist}</h2>
               </Link>
             </div>
-            <div className={albumTags}>
-              <Tag
-                text={`${Number(album.listeners).toLocaleString(
-                  "pt-BR"
-                )} ouvintes`}
-              />
-              <Tag
-                text={`${Number(album.playcount).toLocaleString(
+            <div className={streamingInfo}>
+              <p>
+                {`${Number(album.listeners).toLocaleString("pt-BR")} ouvintes`}
+              </p>
+
+              <p>
+                {`${Number(album.playcount).toLocaleString(
                   "pt-BR"
                 )} reproduções`}
-              />
+              </p>
             </div>
-            <div className={albumTags}>
+            <div className={searchTags}>
               {album.tags.tag.map((tag) => (
                 <Tag text={tag.name} link={tag.url} />
               ))}
             </div>
           </div>
+
           <div className={albumContent}>
             <div className={albumTracks}>
               <h3>Faixas:</h3>
@@ -98,7 +99,7 @@ const Index = ({ match }) => {
                 </div>
               ))}
             </div>
-            <div className={albumInfo}>
+            <div className={albumWiki}>
               <h3>Sobre o álbum</h3>
               <p>{album.wiki && album.wiki.summary.split("<")[0]}</p>
             </div>

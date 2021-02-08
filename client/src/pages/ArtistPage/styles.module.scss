@@ -1,122 +1,21 @@
-.container {
-  padding: 0 8rem;
-  margin-top: 4rem;
-  width: 100%;
+@import "../../styles/mixins";
 
-  @media (max-width: 768px) {
-    padding: 0 2rem;
-  }
+.mainContainer {
+  @include main-container;
 }
 
 .artistHeader {
-  .artistHeaderName {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-
-    h1 {
-      font-size: 8rem;
-      font-weight: bold;
-      letter-spacing: 0.6rem;
-      text-transform: uppercase;
-      margin-right: 3rem;
-
-      @media (max-width: 768px) {
-        font-size: 10vw;
-      }
-    }
-
-    i {
-      color: #e4d2ee;
-      font-size: 4rem;
-      cursor: pointer;
-      transition: 0.2s;
-
-      &:hover {
-        color: #d6b5e7;
-      }
-    }
-  }
-
-  .artistTags {
-    margin: 0.5rem 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
-  }
+  @include searchHeader;
 }
 
 .artistContent {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  flex-wrap: wrap;
-
-  @media (max-width: 960px) {
-    flex-direction: column;
-  }
+  @include searchContentContainer;
 }
 
 .bioSection {
-  flex: 2;
-  margin: 8rem 0;
-  width: 100%;
-  max-width: 900px;
-  background: #3b2e55aa;
-  padding: 4rem 6rem;
-  border-radius: 1.2rem;
-  backdrop-filter: blur(1rem);
-  color: #fff;
-
-  h3 {
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 4rem;
-  }
-
-  p {
-    font-size: 1.8rem;
-    font-weight: lighter;
-    text-align: justify;
-  }
-
-  @media (max-width: 768px) {
-    padding: 3rem 4rem;
-  }
-
-  @media (min-width: 960px) {
-    margin-right: 8rem;
-  }
+  @include searchMainContent;
 }
 
 .otherSection {
-  flex: 1;
-  margin: 8rem 0;
-  width: 100%;
-  max-width: 900px;
-  background: #3b2e55aa;
-  padding: 4rem 6rem;
-  border-radius: 1.2rem;
-  backdrop-filter: blur(1rem);
-  color: #fff;
-  h3 {
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 4rem;
-  }
-  p {
-    font-size: 1.8rem;
-    font-weight: lighter;
-    text-align: justify;
-  }
-
-  @media (max-width: 768px) {
-    padding: 3rem 4rem;
-  }
-
-  @media (max-width: 960px) {
-    margin: 4rem 0;
-  }
+  @include searchSecondaryContent;
 }

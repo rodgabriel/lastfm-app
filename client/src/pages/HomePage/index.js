@@ -6,10 +6,9 @@ import buscarTopArtists from "../../actions/buscarTopArtists";
 
 // css classes
 import {
-  wrapper,
-  main,
-  cardSection,
-  cardContainer,
+  mainContainer,
+  contentSection,
+  cardsContainer,
   searchSection,
 } from "./styles.module.scss";
 
@@ -26,29 +25,27 @@ const HomePage = () => {
   }, [dispatch]);
 
   return (
-    <div className={wrapper}>
-      <main className={main}>
-        <section className={searchSection}>
-          <FormSearch />
-        </section>
-        <section className={cardSection}>
-          <h1>Top 10 Artistas no Brasil</h1>
-          <div className={cardContainer}>
-            {topArtists && topArtists.error ? (
-              <h1>
-                Desculpe, não podemos mostrar os Top 10 Artistas no momento...
-              </h1>
-            ) : (
-              topArtists.map((artist, index) => {
-                return (
-                  <Card key={artist.name} artist={artist} position={index} />
-                );
-              })
-            )}
-          </div>
-        </section>
-      </main>
-    </div>
+    <main className={mainContainer}>
+      <section className={searchSection}>
+        <FormSearch />
+      </section>
+      <section className={contentSection}>
+        <h1>Top 10 Artistas no Brasil</h1>
+        <div className={cardsContainer}>
+          {topArtists && topArtists.error ? (
+            <h1>
+              Desculpe, não podemos mostrar os Top 10 Artistas no momento...
+            </h1>
+          ) : (
+            topArtists.map((artist, index) => {
+              return (
+                <Card key={artist.name} artist={artist} position={index} />
+              );
+            })
+          )}
+        </div>
+      </section>
+    </main>
   );
 };
 
