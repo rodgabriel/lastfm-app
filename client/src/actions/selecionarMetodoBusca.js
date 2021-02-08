@@ -1,7 +1,7 @@
 import {
   BUSCAR_POR_ARTIST,
   BUSCAR_POR_ALBUM,
-} from "../constants/userConstants";
+} from "../constants/metodoBuscaConstants";
 
 export const selecionarBuscaPorArtist = {
   type: BUSCAR_POR_ARTIST,

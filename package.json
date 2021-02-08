@@ -11,7 +11,7 @@
     "start": "node server/index",
     "server": "nodemon server/index",
     "client": "npm start --prefix client",
-    "dev": "concurrently \"yarn server\" \"yarn client\""
+    "dev": "concurrently \"yarn start\" \"yarn client\""
   },
   "dependencies": {
     "axios": "^0.21.1",

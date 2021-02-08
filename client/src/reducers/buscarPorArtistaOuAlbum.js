@@ -1,7 +1,7 @@
 import {
   BUSCAR_POR_ARTIST,
   BUSCAR_POR_ALBUM,
-} from "../constants/userConstants";
+} from "../constants/metodoBuscaConstants";
 
 const buscarPorArtistaOuAlbum = (state = { buscarPor: "artist" }, action) => {
   switch (action.type) {
