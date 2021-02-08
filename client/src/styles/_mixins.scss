@@ -22,16 +22,17 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    max-width: 100%;
 
     h1 {
       font-size: 8rem;
       font-weight: bold;
       letter-spacing: 0.6rem;
       text-transform: uppercase;
-      margin-right: 3rem;
+      margin-right: 1.8rem;
 
       @media (max-width: 768px) {
-        font-size: 10vw;
+        font-size: 3rem;
       }
     }
 

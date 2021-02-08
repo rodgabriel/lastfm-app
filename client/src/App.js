@@ -14,6 +14,7 @@ import Navbar from "./components/Navbar";
 function App() {
   return (
     <Router>
+      {/* overlay gradient sob o background */}
       <div className="overlay"></div>
       <Navbar />
       <Switch>

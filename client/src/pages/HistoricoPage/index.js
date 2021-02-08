@@ -1,4 +1,8 @@
-import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
+import loadHistoricoPesquisa from "../../actions/loadHistoricoPesquisa";
+
 // styles
 import {
   mainContainer,
@@ -10,9 +14,17 @@ import {
 } from "./styles.module.scss";
 
 const Index = () => {
+  const dispatch = useDispatch();
   const historicoPesquisa = useSelector((state) => state.historicoPesquisa);
 
   const { userData } = useSelector((state) => state.userLogin);
+
+  useEffect(() => {
+    if (userData) {
+      const userId = userData._id;
+      dispatch(loadHistoricoPesquisa(userId));
+    }
+  }, [userData, dispatch]);
 
   return (
     <div className={mainContainer}>
